@@ -3,127 +3,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Jo Portraits | Pencil Art</title>
-  <meta name="description" content="Discover realistic black-and-white pencil portraits by Jo. Contact me to order a custom portrait.">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101014">
+  <title>Bekashah Portraits | Private Art Gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <header class="navbar">
-    
-<a href="#home" class="logo">BEKASHAH<span> PORTRAITS</span></a>
-
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <a class="logo" href="#home">BEKASHAH<span> PORTRAITS</span></a>
+    <span id="authStatus">MEMBERS GALLERY</span>
   </header>
 
   <main>
-
     <section class="hero" id="home">
-      <p class="eyebrow">HANDCRAFTED GRAPHITE ART</p>
-
+      <p class="eyebrow">ART · DETAIL · EMOTION</p>
       <h1>Every face<br>tells a <em>story.</em></h1>
-
       <p class="intro">
-        Realistic pencil portraits, created by hand
-        with patience, detail and emotion.
+        A private gallery of handcrafted graphite portraits.
+        Sign in to explore the collection.
       </p>
-
-      <a href="#gallery" class="button">Explore My Art ↘</a>
-
-      <p class="signature">Drawn with passion. Made to last.</p>
     </section>
 
-    <section class="gallery section" id="gallery">
-      <p class="eyebrow">SELECTED WORKS</p>
-      <h2>The Art Gallery</h2>
-
-      <p class="section-intro">
-        Every portrait begins with a blank page.
+    <section class="section" id="authSection">
+      <p class="eyebrow">MEMBER ACCESS</p>
+      <h2 id="formTitle">Welcome back.</h2>
+      <p id="formMessage" class="section-intro">
+        Sign in or create your free account.
       </p>
 
-      <div class="art-grid">
+      <form id="authForm" style="max-width:420px;margin:30px auto;text-align:left">
+        <label for="email">Email address</label>
+        <input id="email" type="email" autocomplete="email"
+          required placeholder="you@example.com"
+          style="display:block;width:100%;padding:14px;margin:8px 0 20px">
 
-        <article class="art-card">
-          <div class="art-placeholder">
-            <span>01</span>
-            <p>Your portrait artwork</p>
-          </div>
-          <h3>Portrait Study</h3>
-          <p>Graphite pencil · Realism</p>
-        </article>
+        <label for="password">Password</label>
+        <input id="password" type="password" minlength="6"
+          autocomplete="current-password" required
+          placeholder="At least 6 characters"
+          style="display:block;width:100%;padding:14px;margin:8px 0 20px">
 
-        <article class="art-card">
-          <div class="art-placeholder">
-            <span>02</span>
-            <p>Your portrait artwork</p>
-          </div>
-          <h3>Expressions</h3>
-          <p>Graphite pencil · Shading</p>
-        </article>
+        <button class="button" id="submitButton" type="submit">
+          Sign in
+        </button>
 
-        <article class="art-card">
-          <div class="art-placeholder">
-            <span>03</span>
-            <p>Your portrait artwork</p>
-          </div>
-          <h3>Timeless Memories</h3>
-          <p>Custom portrait · Handmade</p>
-        </article>
+        <button class="button" id="toggleMode" type="button"
+          style="margin-left:8px">
+          Create account
+        </button>
+      </form>
 
+      <p id="authMessage" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="section gallery" id="privateArea" hidden>
+      <p class="eyebrow">WELCOME TO THE COLLECTION</p>
+      <h2>Your private gallery</h2>
+      <p id="memberEmail" class="section-intro"></p>
+
+      <div id="artGrid" class="art-grid"></div>
+      <p id="emptyMessage">
+        Your gallery is ready for artwork to be added.
+      </p>
+
+      <div id="privateContact" hidden>
+        <h2>Portrait commissions</h2>
+        <p id="contactDetails"></p>
       </div>
+
+      <button class="button" id="logoutButton" type="button">
+        Sign out
+      </button>
     </section>
-
-    <section class="about section" id="about">
-      <p class="eyebrow">BEHIND THE PENCIL</p>
-      <h2>Art is more than a drawing.</h2>
-
-      <p>
-        I'm Jo, a self-taught artist passionate about
-        realistic black-and-white pencil portraits.
-        My goal is to capture the details, emotions
-        and personality that make every face unique.
-      </p>
-    </section>
-
-    <section class="order section" id="contact">
-      <p class="eyebrow">YOUR IDEA, MY ART</p>
-      <h2>Let's create something personal.</h2>
-
-      <p>
-        Turn your favourite photograph into a
-        handmade pencil portrait.
-      </p>
-
-      <a
-        href="https://wa.me/91YOURNUMBER"
-        class="button"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Order Your Portrait ↗
-      </a>
-
-      <p class="small-note">
-        Custom portraits · Made with care
-      </p>
-    </section>
-
   </main>
 
   <footer>
-    <p>© 2026 Jo Portraits. Created with passion.</p>
+    <p>© 2026 Bekashah Portraits.</p>
     <a href="#home">Back to top ↑</a>
   </footer>
 
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
