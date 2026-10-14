@@ -2,10 +2,10 @@
 /* Bekashah Portraits — Firebase Authentication */
 
 const firebaseConfig = {
-  apiKey: "PASTE_YOUR_API_KEY",
+  apiKey: "AIzaSyA1zD7PDvpKI9XstWLPR5IG3e9A0g17X5Y",
   authDomain: "bekashah-portraits-debaf.firebaseapp.com",
   projectId: "bekashah-portraits-debaf",
-  appId: "AIzaSyA1zD7PDvpKI9XstWLPR5IG3e9A0g17X5Y"
+  appId: "bekashah-portraits-debaf"
 };
 
 firebase.initializeApp(firebaseConfig);
