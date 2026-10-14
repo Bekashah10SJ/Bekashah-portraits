@@ -5,57 +5,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101014">
-  <meta name="description" content="Bekashah Portraits — handcrafted graphite pencil portraits.">
-  <title>Bekashah Portraits | Art Gallery</title>
+
+  <meta name="description"
+        content="Bekashah Portraits — realistic black-and-white graphite pencil portraits, created with passion and detail.">
+
+  <title>Bekashah Portraits | Handcrafted Pencil Art</title>
+
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
+
 <body>
 
+  <!-- Navigation -->
   <header class="navbar">
-    <a class="logo" href="#home">BEKASHAH<span> PORTRAITS</span></a>
-    <span>ART GALLERY</span>
+    <a class="logo" href="#home">
+      BEKASHAH<span> PORTRAITS</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#gallery">My Artwork</a>
+      <a href="#about">About</a>
+    </nav>
   </header>
 
   <main>
+
+    <!-- Hero section -->
     <section class="hero" id="home">
       <p class="eyebrow">ART · DETAIL · EMOTION</p>
-      <h1>Every face<br>tells a <em>story.</em></h1>
+
+      <h1>
+        Every face<br>
+        tells a <em>story.</em>
+      </h1>
+
       <p class="intro">
-        A collection of handcrafted graphite portraits,
-        created with passion, patience, and detail.
-      </p>
-      <a class="button" href="#gallery">Explore my artwork</a>
-    </section>
-
-    <section class="section gallery" id="gallery">
-      <p class="eyebrow">THE ART COLLECTION</p>
-      <h2>Graphite Portraits</h2>
-      <p class="section-intro">
-        Every pencil stroke tells a story.
+        Transforming photographs into timeless graphite portraits.
+        Every line, every shade, every detail — drawn by hand.
       </p>
 
-      <div id="artGrid" class="art-grid"></div>
-      <p id="emptyMessage">
-        My artwork collection is coming soon.
-      </p>
-    </section>
-
-    <section class="section" id="contact">
-      <p class="eyebrow">CUSTOM PORTRAITS</p>
-      <h2>Let's create something meaningful.</h2>
-      <p class="section-intro">
-        Have a photograph you'd love to turn into a pencil portrait?
-        Get in touch to discuss a commission.
-      </p>
-      <a class="button" href="mailto:YOUR_EMAIL@example.com">
-        Enquire about a portrait
+      <a class="button" href="#gallery">
+        Explore my artwork ↗
       </a>
     </section>
+
+    <!-- Artwork gallery -->
+    <section class="section gallery" id="gallery">
+      <p class="eyebrow">THE ART COLLECTION</p>
+
+      <h2>Drawn in graphite.</h2>
+
+      <p class="section-intro">
+        Realistic portraits created with patience, passion,
+        and a love for the art of pencil shading.
+      </p>
+
+      <div id="artGrid" class="art-grid">
+
+        <!-- Example artwork card.
+             Replace this image path with your own image. -->
+        <article class="art-card">
+          <img
+            src="images/portrait-1.jpg"
+            alt="Handcrafted graphite pencil portrait"
+            loading="lazy"
+          >
+
+          <div class="art-info">
+            <h3>Portrait Study</h3>
+            <p>Realistic graphite pencil art</p>
+          </div>
+        </article>
+
+      </div>
+
+      <p id="emptyMessage" hidden>
+        New artwork coming soon.
+      </p>
+    </section>
+
+    <!-- About section -->
+    <section class="section" id="about">
+      <p class="eyebrow">BEHIND THE PENCIL</p>
+
+      <h2>More than a drawing.<br>
+        It's <em>emotion.</em>
+      </h2>
+
+      <p class="section-intro">
+        Bekashah Portraits is a personal art portfolio dedicated
+        to realistic black-and-white pencil portraits, capturing
+        expressions and the small details that make every face unique.
+      </p>
+    </section>
+
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2026 Bekashah Portraits.</p>
+    <p>© 2026 Bekashah Portraits. All rights reserved.</p>
     <a href="#home">Back to top ↑</a>
   </footer>
 
