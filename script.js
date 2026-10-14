@@ -5,7 +5,7 @@ const firebaseConfig = {
   apiKey: "PASTE_YOUR_API_KEY",
   authDomain: "bekashah-portraits-debaf.firebaseapp.com",
   projectId: "bekashah-portraits-debaf",
-  appId: "PASTE_YOUR_APP_ID"
+  appId: "AIzaSyA1zD7PDvpKI9XstWLPR5IG3e9A0g17X5Y"
 };
 
 firebase.initializeApp(firebaseConfig);
