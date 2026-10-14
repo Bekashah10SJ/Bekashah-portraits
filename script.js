@@ -1,18 +1,19 @@
 
-/* Bekashah Portraits — Public Art Gallery */
+/* Bekashah Portraits — Public Gallery */
+/* No login, registration, or Firebase required. */
 
 const artworks = [
   /*
-  Add your artwork here:
+  Add your artwork entries here:
 
   {
-    title: "Graphite Portrait",
-    description: "Realistic black-and-white pencil art",
+    title: "Portrait Study",
+    description: "Realistic graphite pencil portrait",
     imageUrl: "images/portrait-1.jpg"
   },
   {
-    title: "Portrait Study",
-    description: "Handcrafted pencil shading",
+    title: "Graphite Art",
+    description: "Black-and-white portrait shading",
     imageUrl: "images/portrait-2.jpg"
   }
   */
@@ -21,12 +22,9 @@ const artworks = [
 const artGrid = document.getElementById("artGrid");
 const emptyMessage = document.getElementById("emptyMessage");
 
-function makeText(tag, text, className) {
+function makeText(tag, text) {
   const element = document.createElement(tag);
   element.textContent = text || "";
-
-  if (className) element.className = className;
-
   return element;
 }
 
@@ -36,38 +34,39 @@ function loadGallery() {
   artGrid.replaceChildren();
 
   if (artworks.length === 0) {
-    emptyMessage.textContent =
-      "Your portrait collection will appear here soon.";
     emptyMessage.hidden = false;
     return;
   }
 
-  artworks.forEach(function (item) {
+  artworks.forEach(function (artwork) {
     const card = document.createElement("article");
     card.className = "art-card";
 
-    if (item.imageUrl) {
+    if (artwork.imageUrl) {
       const image = document.createElement("img");
-      image.src = item.imageUrl;
-      image.alt = item.title || "Graphite portrait artwork";
+      image.src = artwork.imageUrl;
+      image.alt = artwork.title || "Pencil portrait";
       image.loading = "lazy";
-      image.style.width = "100%";
-      image.style.height = "auto";
-
-      image.addEventListener("error", function () {
-        image.alt = "Image unavailable. Please check the image path.";
-      });
 
       card.appendChild(image);
     }
 
-    card.appendChild(makeText("h3", item.title, ""));
-    card.appendChild(makeText("p", item.description, ""));
+    const details = document.createElement("div");
+    details.className = "art-info";
 
-    if (item.price) {
-      card.appendChild(makeText("p", item.price, ""));
+    details.appendChild(
+      makeText("h3", artwork.title || "Portrait")
+    );
+
+    details.appendChild(
+      makeText("p", artwork.description || "Graphite pencil art")
+    );
+
+    if (artwork.price) {
+      details.appendChild(makeText("p", artwork.price));
     }
 
+    card.appendChild(details);
     artGrid.appendChild(card);
   });
 
