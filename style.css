@@ -1,4 +1,15 @@
 
+/* BEKASHAH PORTRAITS — ARTIST EDITION */
+
+:root {
+  --bg: #101014;
+  --panel: #19191f;
+  --cream: #f7f0e5;
+  --orange: #ff7048;
+  --violet: #a78bfa;
+  --muted: #aaa5b3;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,13 +18,15 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
-  background: #faf9f6;
-  color: #171717;
+  background: var(--bg);
+  color: var(--cream);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 a {
@@ -21,23 +34,36 @@ a {
   text-decoration: none;
 }
 
+::selection {
+  background: var(--orange);
+  color: #111;
+}
+
+/* Navigation */
+
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   min-height: 76px;
-  padding: 20px 8%;
+  padding: 18px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  border-bottom: 1px solid #dedbd5;
+  background: rgba(16, 16, 20, 0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #ffffff12;
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 19px;
+  font-weight: 900;
   letter-spacing: 2px;
 }
 
 .logo span {
+  color: var(--orange);
   font-weight: 400;
 }
 
@@ -48,109 +74,170 @@ nav {
   font-size: 13px;
 }
 
-nav a:hover,
-footer a:hover {
-  text-decoration: underline;
+nav a {
+  color: var(--muted);
+  transition: color 0.3s;
 }
 
+nav a:hover {
+  color: var(--orange);
+}
+
+/* Animated hero */
+
 .hero {
-  min-height: 510px;
-  padding: 100px 10% 70px;
+  position: relative;
+  isolation: isolate;
+  min-height: 570px;
+  padding: 100px 8%;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: var(--orange);
+  filter: blur(120px);
+  opacity: 0.15;
+  animation: glow 7s ease-in-out infinite alternate;
 }
 
 .eyebrow {
   font-size: 11px;
   letter-spacing: 4px;
   font-weight: bold;
-  color: #777;
+  color: var(--orange);
 }
 
 h1 {
   font-family: Georgia, serif;
-  font-size: clamp(48px, 9vw, 86px);
+  font-size: clamp(48px, 10vw, 100px);
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.08;
   margin: 24px 0;
+  animation: rise 1s ease both;
 }
 
 h1 em {
+  color: var(--orange);
   font-weight: 400;
 }
 
 .intro,
 .section-intro {
-  color: #666;
+  color: var(--muted);
   max-width: 440px;
   margin: 0 auto 28px;
 }
 
 .button {
   display: inline-block;
-  background: #171717;
-  color: white;
-  padding: 13px 25px;
+  background: var(--orange);
+  color: #171217;
+  padding: 14px 27px;
   font-size: 13px;
-  transition: background 0.2s;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .button:hover {
-  background: #444;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 35px #ff704844;
 }
 
 .signature {
-  margin-top: 35px;
+  margin-top: 32px;
+  color: var(--muted);
   font-family: Georgia, serif;
   font-style: italic;
-  color: #777;
-  font-size: 14px;
 }
 
+/* Gallery */
+
 .section {
-  padding: 85px 8%;
+  padding: 90px 8%;
   text-align: center;
 }
 
 .gallery {
-  background: #f0eee9;
+  background: var(--panel);
 }
 
 h2 {
   font-family: Georgia, serif;
-  font-size: clamp(30px, 5vw, 45px);
+  font-size: clamp(32px, 5vw, 54px);
   font-weight: 400;
-  line-height: 1.25;
-  margin: 15px 0;
+  line-height: 1.2;
+  margin: 16px 0;
 }
 
 .art-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 25px;
+  gap: 24px;
   margin-top: 45px;
   text-align: left;
 }
 
+.art-card {
+  padding: 10px;
+  border: 1px solid #ffffff12;
+  border-radius: 8px;
+  background: #ffffff04;
+  transition: transform 0.35s, border-color 0.35s;
+}
+
+.art-card:hover {
+  transform: translateY(-9px);
+  border-color: var(--orange);
+}
+
 .art-placeholder {
+  position: relative;
   aspect-ratio: 3 / 4;
-  background: #dedbd5;
-  border: 1px solid #ccc7bf;
+  background: linear-gradient(145deg, #29242e, #17171c);
+  border: 1px solid #ffffff12;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #777;
+  color: var(--muted);
   gap: 12px;
+  overflow: hidden;
+}
+
+.art-placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    #ffffff12 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.7s;
+}
+
+.art-card:hover .art-placeholder::after {
+  transform: translateX(100%);
 }
 
 .art-placeholder span {
   font-family: Georgia, serif;
-  font-size: 40px;
-  color: #999;
+  font-size: 48px;
+  color: var(--violet);
 }
 
 .art-placeholder p {
@@ -159,52 +246,57 @@ h2 {
 
 .art-card h3 {
   font-family: Georgia, serif;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 400;
-  margin-top: 15px;
+  margin-top: 17px;
 }
 
 .art-card > p {
-  color: #777;
+  color: var(--muted);
   font-size: 12px;
-  margin-top: 5px;
+  margin: 5px 0 12px;
 }
 
+/* Artist introduction */
+
 .about {
-  max-width: 850px;
+  max-width: 900px;
   margin: auto;
 }
 
 .about > p:last-child {
   max-width: 600px;
   margin: 25px auto 0;
-  color: #666;
+  color: var(--muted);
 }
+
+/* Custom orders */
 
 .order {
-  background: #171717;
-  color: #fff;
+  background:
+    radial-gradient(ellipse at top right, #a78bfa20, transparent 55%),
+    #19191f;
 }
 
-.order .eyebrow,
+.order .eyebrow {
+  color: var(--violet);
+}
+
 .order > p:not(.eyebrow) {
-  color: #bbb;
+  color: var(--muted);
 }
 
 .order .button {
-  background: #fff;
-  color: #171717;
-  margin-top: 15px;
-}
-
-.order .button:hover {
-  background: #ddd;
+  margin-top: 18px;
 }
 
 .small-note {
   font-size: 12px;
   margin-top: 18px;
+  color: var(--muted);
 }
+
+/* Footer */
 
 footer {
   padding: 25px 8%;
@@ -213,13 +305,52 @@ footer {
   flex-wrap: wrap;
   gap: 12px;
   font-size: 12px;
-  color: #777;
+  color: var(--muted);
+  border-top: 1px solid #ffffff12;
 }
 
-@media (max-width: 600px) {
+footer a:hover {
+  color: var(--orange);
+}
+
+/* Animations */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    transform: translate(-35px, -10px) scale(0.9);
+  }
+  to {
+    transform: translate(35px, 20px) scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile layout */
+
+@media (max-width: 650px) {
   .navbar {
     flex-direction: column;
-    padding: 20px 5%;
+    padding: 16px 5%;
   }
 
   nav {
@@ -228,7 +359,7 @@ footer {
   }
 
   .hero {
-    min-height: 440px;
+    min-height: 460px;
     padding: 75px 6%;
   }
 
@@ -238,7 +369,7 @@ footer {
 
   .art-grid {
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 25px;
   }
 
   .art-placeholder {
