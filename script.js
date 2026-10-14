@@ -2,10 +2,14 @@
 /* Bekashah Portraits — Firebase Authentication */
 
 const firebaseConfig = {
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   apiKey: "AIzaSyA1zD7PDvpKI9XstWLPR5IG3e9A0g17X5Y",
   authDomain: "bekashah-portraits-debaf.firebaseapp.com",
   projectId: "bekashah-portraits-debaf",
-  appId: "1:464072809204:web:15389a0b1efc6c50925ca1"
+  storageBucket: "bekashah-portraits-debaf.firebasestorage.app",
+  messagingSenderId: "464072809204",
+  appId: "1:464072809204:web:15389a0b1efc6c50925ca1",
+  measurementId: "G-6SBYMYPCTM"
 };
 
 firebase.initializeApp(firebaseConfig);
