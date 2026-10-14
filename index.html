@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101014">
-  <title>Bekashah Portraits | Private Art Gallery</title>
+  <title>Bekashah Portraits | Art Gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="navbar">
     <a class="logo" href="#home">BEKASHAH<span> PORTRAITS</span></a>
-    <span id="authStatus">MEMBERS GALLERY</span>
+    <span>MY ART GALLERY</span>
   </header>
 
   <main>
@@ -20,61 +20,36 @@
       <p class="eyebrow">ART · DETAIL · EMOTION</p>
       <h1>Every face<br>tells a <em>story.</em></h1>
       <p class="intro">
-        A private gallery of handcrafted graphite portraits.
-        Sign in to explore the collection.
+        A collection of handcrafted graphite portraits,
+        created with passion, patience, and detail.
       </p>
+      <a class="button" href="#gallery">Explore my artwork</a>
     </section>
 
-    <section class="section" id="authSection">
-      <p class="eyebrow">MEMBER ACCESS</p>
-      <h2 id="formTitle">Welcome back.</h2>
-      <p id="formMessage" class="section-intro">
-        Sign in or create your free account.
+    <section class="section gallery" id="gallery">
+      <p class="eyebrow">THE ART COLLECTION</p>
+      <h2>Graphite Portraits</h2>
+      <p class="section-intro">
+        Every pencil stroke tells a story.
       </p>
-
-      <form id="authForm" style="max-width:420px;margin:30px auto;text-align:left">
-        <label for="email">Email address</label>
-        <input id="email" type="email" autocomplete="email"
-          required placeholder="you@example.com"
-          style="display:block;width:100%;padding:14px;margin:8px 0 20px">
-
-        <label for="password">Password</label>
-        <input id="password" type="password" minlength="6"
-          autocomplete="current-password" required
-          placeholder="At least 6 characters"
-          style="display:block;width:100%;padding:14px;margin:8px 0 20px">
-
-        <button class="button" id="submitButton" type="submit">
-          Sign in
-        </button>
-
-        <button class="button" id="toggleMode" type="button"
-          style="margin-left:8px">
-          Create account
-        </button>
-      </form>
-
-      <p id="authMessage" role="status" aria-live="polite"></p>
-    </section>
-
-    <section class="section gallery" id="privateArea" hidden>
-      <p class="eyebrow">WELCOME TO THE COLLECTION</p>
-      <h2>Your private gallery</h2>
-      <p id="memberEmail" class="section-intro"></p>
 
       <div id="artGrid" class="art-grid"></div>
+
       <p id="emptyMessage">
-        Your gallery is ready for artwork to be added.
+        My artwork collection is coming soon.
       </p>
+    </section>
 
-      <div id="privateContact" hidden>
-        <h2>Portrait commissions</h2>
-        <p id="contactDetails"></p>
-      </div>
-
-      <button class="button" id="logoutButton" type="button">
-        Sign out
-      </button>
+    <section class="section" id="contact">
+      <p class="eyebrow">CUSTOM PORTRAITS</p>
+      <h2>Let's create something meaningful.</h2>
+      <p class="section-intro">
+        Have a photograph you'd love to turn into a pencil portrait?
+        Get in touch to discuss a commission.
+      </p>
+      <a class="button" href="mailto:YOUR_EMAIL@example.com">
+        Enquire about a portrait
+      </a>
     </section>
   </main>
 
@@ -83,9 +58,6 @@
     <a href="#home">Back to top ↑</a>
   </footer>
 
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
